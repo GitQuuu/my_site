@@ -4,6 +4,6 @@ from blog.views import index, posts, post
 
 urlpatterns = [
     path("", index, name="index"),
-    path("posts", posts , name="posts"),
-    path('posts/<slug:slug>', post , name="post"),
+    path("blogs", posts , name="blogs"),
+    path('blogs/<slug:slug>', post , name="post"),
 ]
