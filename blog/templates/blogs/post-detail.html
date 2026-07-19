@@ -1,0 +1,26 @@
+﻿{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+This post title
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/post.css' %}">
+<link rel="stylesheet" href="{% static 'blog/all-posts.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="summary">
+    <h2>Post Title</h2>
+    <article>
+        <img src="{% static 'blog/images/mountains.jpg' %}" alt="Post Title">
+        <address>By Max</address>
+        <div>Last updated on <time>2026-07-19</time></div>
+    </article>
+</section>
+
+<main>
+    <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+</main>
+{% endblock %}
