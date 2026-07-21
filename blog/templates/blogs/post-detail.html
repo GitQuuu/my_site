@@ -13,7 +13,9 @@
 <section id="summary">
     <h2>{{ post.title }}</h2>
     <article>
-        <img src="{% static 'blog/images/mountains.jpg' %}" alt="Post Title">
+        {% with image_path='blog/images/'|add:post.image %}
+        <img src="{% static image_path %}" alt="{{ post.excerpt }}">
+        {% endwith %}
         <address>{{ post.author }}</address>
         <div>Last updated on <time>{{ post.date | date:"d M Y"}}</time></div>
     </article>
