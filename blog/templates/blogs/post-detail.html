@@ -13,7 +13,7 @@
 <section id="summary">
     <h2>{{ post.title }}</h2>
     <article>
-        {% with image_path='blog/images/'|add:post.image_name %}
+        {% with image_path='blog/images/'|add:post.image.name %}
         <img src="{% static image_path %}" alt="{{ post.excerpt }}">
         {% endwith %}
         <address>{{ post.author }}</address>
