@@ -12,6 +12,11 @@
 {% block content %}
 <section id="summary">
     <h2>{{ post.title }}</h2>
+    <div>
+        {% for tag in post_tags %}
+            <span class="tag">{{ tag.caption }}</span>
+        {% endfor %}
+    </div>
     <article>
         {% with image_path='blog/images/'|add:post.image.name %}
         <img src="{% static image_path %}" alt="{{ post.excerpt }}">
