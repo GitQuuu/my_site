@@ -16,7 +16,7 @@
         {% with image_path='blog/images/'|add:post.image.name %}
         <img src="{% static image_path %}" alt="{{ post.excerpt }}">
         {% endwith %}
-        <address>{{ post.author }}</address>
+        <address>By <a href="mailto:{{post.author.email_address}}"> {{ post.author }} </a></address>
         <div>Last updated on <time>{{ post.date | date:"d M Y"}}</time></div>
     </article>
 </section>
