@@ -20,7 +20,7 @@ class Tag(models.Model):
 
 class Post(models.Model):
     slug = models.SlugField(unique=True)
-    image = models.ImageField(upload_to="posts, null=True, blank=True")
+    image = models.ImageField(upload_to="posts", null=True, blank=True)
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, related_name="posts")
     date = models.DateField()
     title = models.CharField(max_length=200)
