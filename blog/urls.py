@@ -5,6 +5,6 @@ from blog.views import posts, post
 
 urlpatterns = [
     path("", views.StartingPageView.as_view(), name="starting-page"),
-    path("blogs", posts , name="all-posts"),
+    path("blogs", views.AllPostsView.as_view() , name="all-posts"),
     path('blogs/<slug:slug>', post , name="post-detail-page"),
 ]

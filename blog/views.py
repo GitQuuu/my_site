@@ -25,6 +25,13 @@ def post(request, slug):
         "post_tags" : identified_post.tags.all()
     } )
 
+class AllPostsView(ListView):
+    model = Post
+    template_name = "blogs/all-posts.html"
+    context_object_name = "all_posts"
+    ordering = ("-date",)
+
+
 def posts(request):
     return render(request, "blogs/all-posts.html", {
         "all_posts": Post.objects.all().order_by("-date")
