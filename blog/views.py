@@ -1,8 +1,6 @@
-from multiprocessing import context
-
-from django.shortcuts import get_object_or_404, render
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
+from blog.forms import CommentForm
 
 from blog.models import Post
 
@@ -27,6 +25,7 @@ class SinglePostView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["post_tags"] = self.object.tags.all()
+        context["comment_form"] = CommentForm()
         return context
 
 class AllPostsView(ListView):
